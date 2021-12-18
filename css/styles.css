@@ -61,6 +61,7 @@ a {
   display: flex;
   margin-left: auto;
   align-items: center;
+  list-style: none;
 }
 
 .link-box {
@@ -83,12 +84,35 @@ a {
   line-height: 1.14;
   letter-spacing: 0.02em;
   font-weight: 500;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .link-accent {
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--heder-link-color);
   line-height: 1.14;
   letter-spacing: 0.02em;
   font-weight: 500;
+  position: relative;
+  display: block;
+}
+.link-accent::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--heder-link-color);
+}
+
+.link-accent:hover::after {
+  /* прозрачность */
+  opacity: 1;
+  /* на сколько растянуться 1 это-100% ширины */
+  transform: scaleX(1);
 }
 
 /* Стилизация хедера контакты */
@@ -96,11 +120,17 @@ a {
   line-height: 1.14;
   letter-spacing: 0.02em;
   font-weight: 500;
-  color: var(--txt-color);
+  fill: var(--txt-color);
+  color: currentColor;
+  display: flex;
+  align-items: center;
 }
 .hader-link {
-  color: var(--txt-color);
+  fill: var(--txt-color);
   margin-right: 30px;
+  color: currentColor;
+  display: flex;
+  align-items: center;
 }
 .contact-icon-envelope {
   width: 26px;
@@ -461,7 +491,7 @@ img {
   margin-right: auto;
 }
 .li-button {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 .card {
   padding-left: 24px;
@@ -548,7 +578,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: var(--txt-color);
+  fill: var(--border-color);
 }
 .soc-link-box:hover,
 .soc-link-box:focus {
@@ -577,12 +607,12 @@ img {
   letter-spacing: 0.03em;
   color: var(--body-color);
   font-style: normal;
-  font-style: bold;
+  text-transform: uppercase;
 }
 .customers-link {
   width: 170px;
   height: 92px;
-  color: var(--txt-color);
+  fill: var(--border-color);
   margin: auto;
   padding: 0;
   display: flex;
@@ -593,8 +623,6 @@ img {
 .customers-link:focus {
   fill: var(--heder-link-color);
   border: 1px solid var(--heder-link-color);
-  margin-top: -1px;
-  margin-left: -1px;
   border-radius: 4px;
 }
 .soc-link-footer {
