@@ -11,6 +11,9 @@
   --section-background-color: #f5f4fa;
   --activity-color: #ff0000;
   --border-color: #afb1b8;
+  --color-opacity: rgba(0, 0, 0, 0.2);
+  --circle-coloir: rgba(0, 0, 0, 0.1);
+  --worck-card-color: rgba(47, 48, 58, 0.8);
 }
 /* Убирает точки */
 ul {
@@ -86,6 +89,7 @@ a {
   font-weight: 500;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .link-accent {
   padding-top: 32px;
@@ -124,6 +128,7 @@ a {
   color: currentColor;
   display: flex;
   align-items: center;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .hader-link {
   fill: var(--txt-color);
@@ -131,6 +136,8 @@ a {
   color: currentColor;
   display: flex;
   align-items: center;
+  /* задержка */
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .contact-icon-envelope {
   width: 26px;
@@ -203,6 +210,7 @@ a {
   border-radius: 4px;
   padding: 6px 22px;
   border: none;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 /* Стилизация секция 1 */
 .main-section {
@@ -294,9 +302,31 @@ a {
 .section-worck .li-worck + .li-worck {
   margin-left: 30px;
 }
+.li-worck::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 370px;
+  height: 70px;
+  background-color: var(--worck-card-color);
+  transform: translatey(223px);
+}
+
 .section-worck {
   display: flex;
   justify-content: space-between;
+}
+.li-worck-title {
+  position: absolute;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--body-color);
+  text-transform: uppercase;
+  padding-top: 251px;
+  padding-left: 83px;
+  font-weight: 700;
 }
 
 /* Стилизация секция 4 */
@@ -360,6 +390,7 @@ img {
   font-weight: 400;
   font-style: normal;
   margin-bottom: 9px;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .footer-tel {
   color: var(--txt-color);
@@ -367,6 +398,7 @@ img {
   letter-spacing: 0.03em;
   font-weight: 400;
   font-style: normal;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .footer-adress {
   color: var(--txt-color);
@@ -375,6 +407,7 @@ img {
   font-weight: 400;
   font-style: normal;
   margin-bottom: 9px;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .footer {
   margin-left: auto;
@@ -469,6 +502,7 @@ img {
   background-color: var(--sub-txt-color);
   margin-right: 30px;
   margin-bottom: 30px;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .flex-element:hover,
@@ -519,7 +553,7 @@ img {
 .customers {
   width: 170px;
   height: 92px;
-  border: 1px solid var(--border-color);
+
   border-radius: 4px;
   fill: var(--border-color);
 }
@@ -579,6 +613,8 @@ img {
   justify-content: center;
   align-items: center;
   fill: var(--border-color);
+  border-radius: 50%;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .soc-link-box:hover,
 .soc-link-box:focus {
@@ -608,6 +644,7 @@ img {
   color: var(--body-color);
   font-style: normal;
   text-transform: uppercase;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .customers-link {
   width: 170px;
@@ -615,9 +652,11 @@ img {
   fill: var(--border-color);
   margin: auto;
   padding: 0;
+  border: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -632,7 +671,7 @@ img {
   justify-content: center;
   align-items: center;
   fill: var(--body-color);
-
+  transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
   border-radius: 50%;
   background-color: rgb(255, 255, 255, 0.1);
   display: flex;
@@ -643,6 +682,37 @@ img {
   fill: var(--body-color);
   border-radius: 50%;
 }
+.non-txt {
+  margin: 0;
+  padding: 0;
+}
+.close-button {
+  width: 30px;
+  height: 30px;
+
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background-color: var(--body-color);
+  /* border: none; */
+  /* border-style: solid; */
+  border-color: var(--circle-coloir);
+  border-radius: 50%;
+  border-width: 1px;
+  padding: 0;
+  background-image: url("../img/close-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* смещение иконки при ховере */
+  /* transform: translateY(-300px); */
+  transform: translateX(241px);
+  margin-top: 8px;
+}
+
+.close-button:hover,
+.close-button:focus {
+  cursor: pointer;
+}
+
 /* Модальное окно */
 .backdrop {
   position: fixed;
@@ -650,7 +720,8 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-opacity);
+  z-index: 1;
 
   /* Анимация появления модалки */
   opacity: 1;
@@ -660,11 +731,12 @@ img {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: inherit;
 }
 /* ____________________________________состояние модалки когда она спрятана */
 /* скеил- показывает, откуда на нас будет выезжать окно */
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(0.5);
 }
 /* ____________________________________состояние модалки когда она спрятана */
 /*_____________________________________________ это состояние, когда окно показано */
@@ -673,11 +745,12 @@ img {
   top: 50%;
   left: 50%;
 
-  min-height: 300px;
-  min-width: 400px;
-  padding: 15px;
-
-  background-color: rgb(199, 109, 207);
+  min-height: 581px;
+  min-width: 528px;
+  /* padding: 15px; */
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--body-color);
 
   transform: translate(-50%, -50%) scale(1);
 
