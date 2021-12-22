@@ -14,6 +14,7 @@
   --color-opacity: rgba(0, 0, 0, 0.2);
   --circle-coloir: rgba(0, 0, 0, 0.1);
   --worck-card-color: rgba(47, 48, 58, 0.8);
+  --worck-color: rgba(33, 150, 243, 0.9);
 }
 /* Убирает точки */
 ul {
@@ -754,43 +755,38 @@ img {
 /*_____________________________________________ это состояние, когда окно показано */
 
 .product-box {
-  position: relative;
-  overflow: hidden;
-}
-.product-box::before {
-  display: inline-block;
-  position: absolute;
-  content: "";
   width: 370px;
   height: 294px;
-  background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
-  transform: translateY(296px);
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  margin: 0;
 }
-.product-box:hover::before {
-  opacity: 1;
-  transform: translateY(0);
 
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 .worck-text {
+  height: 294px;
   position: absolute;
-  padding-top: 43px;
-  padding-left: 40px;
-  color: var(--body-color);
+  content: "";
+  padding-left: 24px;
+  padding-top: 63px;
+  padding-right: 24px;
+  display: inline-block;
+  top: 0;
+  left: 0;
   opacity: 0;
-  padding: 63px 24px 63px 24px;
+  color: var(--body-color);
+  background-color: var(--worck-color);
   margin: 0;
   font-family: Roboto;
   font-size: 18px;
   line-height: 1.55;
-}
-.product-box:hover .worck-text {
+  transform: translateY(296px);
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flex-element:hover .worck-text {
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
-  transition-duration: 750ms;
 }
