@@ -22,6 +22,16 @@ ul {
   margin: 0;
   padding: 0;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
 
 /* Задает цвет основному шрифту */
 body {
@@ -410,22 +420,40 @@ img {
   margin-bottom: 9px;
   transition: background-color 250ms, cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
+.footer-contact-box {
+  width: 231px;
+  height: 132px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 115px;
+  margin-right: 70px;
+}
+.footer-contact-icon {
+  width: 206px;
+  height: 80px;
+  margin-top: 72px;
+}
 .footer {
-  margin-left: auto;
-  margin-right: auto;
+  /* padding-top: 60px;
+  padding-bottom: 60px; */
+  margin-left: 0;
+  margin-right: 0px;
   max-width: 1600px;
+  height: 252px;
   background-color: var(--section1-background-color);
+  display: flex;
+  align-items: baseline;
 }
 .adress {
   width: 231px;
   height: 81px;
   padding-bottom: 60px;
 }
-
+/* 
 .nav-foot {
   padding-top: 60px;
   padding-bottom: 10px;
-}
+} */
 
 /* Вторая страница */
 /* Задает цвет заголовку */
@@ -587,16 +615,31 @@ img {
 .worck-icon {
   width: 70px;
 }
+.soc-icon-foot {
+  display: flex;
+  width: 206px;
+  height: 44px;
+  margin-top: 20px;
+  /* margin-right: auto;
+  margin-left: auto;
+  ;
+  margin-bottom: 30px;
+  */
+  justify-content: space-between;
+}
 .soc-icon {
   display: flex;
   width: 206px;
   height: 44px;
+  margin-top: 16px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 16px;
+
   margin-bottom: 30px;
+
   justify-content: space-between;
 }
+
 .soc-link {
   width: 44px;
   height: 44px;
@@ -626,9 +669,9 @@ img {
 .soc-icon-footer {
   display: flex;
   justify-content: center;
-  margin-bottom: 84px;
+  /* margin-bottom: 84px;
   margin-left: -394px;
-  margin-top: -145px;
+  margin-top: -145px; */
 }
 
 .soc-linc-footer:nth-child(4n + 1) {
